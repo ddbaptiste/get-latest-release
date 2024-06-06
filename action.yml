@@ -1,4 +1,4 @@
-name: 'get-latest-release'
+name: 'get-latest-git-release-tag'
 description: 'Get the latest release tag for the current repository.'
 author: 'ddbaptiste'
 branding:

@@ -15,5 +15,5 @@ jobs:
         uses: ddbaptiste/get-latest-release@1.0.0
 
       - name: Print Latest Release
-        run: echo ${{ steps.fetch-latest-release.outputs.latest-release }}
+        run: echo ${{ steps.get-latest-release-version.outputs.latest-release }}
 ```
