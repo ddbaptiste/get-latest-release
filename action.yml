@@ -1,0 +1,23 @@
+name: 'get-latest-release'
+description: 'Get the latest release tag for the current repository.'
+author: 'ddbaptiste'
+branding:
+  icon: tag
+  color: purple
+
+# Based on https://github.com/reloc8/action-latest-release-version
+# but fixing warnings
+outputs:
+  latest-release:
+    description: "The tag associated with the latest release in the current repository"
+    value: ${{ steps.get-latest-release-version.outputs.latest-release }}
+
+runs:
+  using: 'composite'
+  steps:
+    - id: get-latest-release-version
+      run: |
+        git fetch --tags
+        git fetch --prune --unshallow || true
+        echo "{latest-release}={$(git describe --abbrev=0 --tags)}" >> $GITHUB_PATH
+      shell: bash
