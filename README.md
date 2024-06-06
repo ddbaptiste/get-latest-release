@@ -12,7 +12,7 @@ jobs:
 
       - name: Get Latest Release Version
         id: get-latest-release
-        uses: ddbaptiste/get-latest-release@1.0.0
+        uses: ddbaptiste/get-latest-git-release-tag@1.0.0
 
       - name: Print Latest Release
         run: echo ${{ steps.get-latest-release-version.outputs.latest-release }}
